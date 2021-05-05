@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn server for staging site
+
+[Service]
+Restart=on-failure
+User=graf
+WorkingDirectory=/home/graf/sites/staging-site
+EnvironmentFile=/home/graf/sites/staging-site/.env
+
+ExecStart=/home/graf/sites/staging-site/virtualenv/bin/gunicorn --bind unix:/tmp/staging-site.socket superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
