@@ -1,13 +1,15 @@
 [Unit]
-Description=Gunicorn server for staging site
+Description=Gunicorn server for DOMAIN
 
 [Service]
 Restart=on-failure
-User=graf
-WorkingDirectory=/home/graf/sites/staging-site
-EnvironmentFile=/home/graf/sites/staging-site/.env
+User=elspeth
+WorkingDirectory=/home/graf/sites/DOMAIN
+EnvironmentFile=/home/graf/sites/DOMAIN/.env
 
-ExecStart=/home/graf/sites/staging-site/virtualenv/bin/gunicorn --bind unix:/tmp/staging-site.socket superlists.wsgi:application
+ExecStart=/home/graf/sites/DOMAIN/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/DOMAIN.socket \
+    superlists.wsgi:application
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.targe
