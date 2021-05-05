@@ -12,4 +12,4 @@ ExecStart=/home/graf/sites/DOMAIN/virtualenv/bin/gunicorn \
     superlists.wsgi:application
 
 [Install]
-WantedBy=multi-user.targe
+WantedBy=multi-user.target
