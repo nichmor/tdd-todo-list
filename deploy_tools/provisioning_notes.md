@@ -23,6 +23,7 @@ eg, on Ubuntu:
 
 * see gunicorn-systemd.template.service
 * replace DOMAIN with, e.g., staging.my-domain.com
+* REPLACE DOMAIN_PORT WITH, e.g., 80 for live and 8080:staging
 
 ## Folder structure:
 
