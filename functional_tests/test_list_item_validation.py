@@ -24,7 +24,7 @@ class ItemValidationTest(FunctionalTest):
 
         self.browser.find_element_by_id('id_new_item').send_keys('Buy milk')
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
-        
+        time.sleep(0.5)
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
 
         self.wait_for(lambda: self.assertEqual(
